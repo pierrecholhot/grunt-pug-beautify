@@ -23,7 +23,7 @@
     "node": ">= 0.10.0"
   },
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt"
   },
   "dependencies": {
     "chalk": "^1.1.3",

@@ -27,5 +27,6 @@ module.exports = function(grunt) {
   grunt.loadTasks('tasks');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-nodeunit');
-  grunt.registerTask('default', ['clean', 'pug_beautify', 'nodeunit']);
+  grunt.registerTask('test', ['clean', 'pug_beautify', 'nodeunit']);
+  grunt.registerTask('default', ['test']);
 };
