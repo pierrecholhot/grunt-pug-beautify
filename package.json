@@ -1,7 +1,7 @@
 {
   "name": "grunt-pug-beautify",
   "description": "A grunt wrapper for Jade-Beautify (now Pug-Beautify).",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "https://github.com/pierrecholhot/grunt-pug-beautify",
   "author": {
     "name": "Pierre Cholhot",

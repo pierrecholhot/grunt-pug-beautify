@@ -1,6 +1,6 @@
 # grunt-pug-beautify [![Build Status](https://travis-ci.org/pierrecholhot/grunt-pug-beautify.svg?branch=master)](https://travis-ci.org/pierrecholhot/grunt-pug-beautify)
 
-A grunt wrapper for <strike>JADE Beautify</strike> PUG Beautify with a couple of more features.
+A grunt wrapper for <strike>Jade-Beautify</strike> (now Pug-Beautify).
 
 *Issues regarding rules should be reported on the PugBeautify [issue tracker](https://github.com/vingorius/pug-beautify/issues) as it's the actual beautifier.*
 
