@@ -1,89 +1,91 @@
-# grunt-pug-beautify
+# grunt-pug-beautify [![Build Status](https://travis-ci.org/pierrecholhot/grunt-pug-beautify.svg?branch=master)](https://travis-ci.org/pierrecholhot/grunt-pug-beautify)
 
-> A grunt wrapper for Jade-Beautify (now Pug-Beautify).
+A grunt wrapper for <strike>JADE Beautify</strike> PUG Beautify with a couple of more features.
 
-## Getting Started
-This plugin requires Grunt `~0.4`
+*Issues regarding rules should be reported on the PugBeautify [issue tracker](https://github.com/vingorius/pug-beautify/issues) as it's the actual beautifier.*
 
-If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
+## install
 
-```shell
-npm install grunt-pug-beautify --save-dev
+```
+$ npm install --save-dev grunt-pug-beautify
 ```
 
-Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
+## usage
 
-```js
-grunt.loadNpmTasks('grunt-pug-beautify');
+```
+module.exports = function(grunt) {
+  grunt.initConfig({
+    pugbeautify: {
+      all: {
+        expand: true,
+        cwd: 'fixtures/',
+        src: '*.jade',
+        dest: 'dist/',
+        options: { omit_empty_lines: true }
+      }
+    }
+  });
+  grunt.loadTasks('grunt-pug-beautify');
+  grunt.registerTask('default', ['pugbeautify']);
+};
 ```
 
-## The "pug_beautify" task
+## API
 
-### Overview
-In your project's Gruntfile, add a section named `pug_beautify` to the data object passed into `grunt.initConfig()`.
+### options
 
-```js
-grunt.initConfig({
-  pug_beautify: {
-    options: {
-      // Task-specific options go here.
-    },
-    your_target: {
-      // Target-specific file lists and/or options go here.
-    },
-  },
-});
+#### [grunt-pug-beautify](https://github.com/PierreCholhot/grunt-pug-beautify)
+
+In the gruntfile you can specify the following options:
+
+##### omit_empty_lines
+
+- Type: `boolean`
+- Default: `'false'`
+
+Omits all empty new lines (except at EOF)
+
+#### [pug-beautify](https://github.com/vingorius/pug-beautify)
+
+You can also specify the following options (parsed by pug-beautify):
+
+##### fill_tab
+
+- Type: `boolean`
+- Default: `'true'`
+
+Indent using tabs or spaces
+
+##### omit_div
+
+- Type: `boolean`
+- Default: `'false'`
+
+Whether to omit `div` tag [`div.hello(attr=..)` becomes `.hello(attr=..)`]
+
+##### tab_size
+
+- Type: `number`
+- Default: `'false'`
+
+When `fill_tab` is set to `false`, indents using spaces, default is 2.
+
+## test
+
+```
+npm test
 ```
 
-### Options
+## develop
 
-#### options.separator
-Type: `String`
-Default value: `',  '`
-
-A string value that is used to do something with whatever.
-
-#### options.punctuation
-Type: `String`
-Default value: `'.'`
-
-A string value that is used to do something else with whatever else.
-
-### Usage Examples
-
-#### Default Options
-In this example, the default options are used to do something with whatever. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result would be `Testing, 1 2 3.`
-
-```js
-grunt.initConfig({
-  pug_beautify: {
-    options: {},
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
-  },
-});
+```
+npm install
 ```
 
-#### Custom Options
-In this example, custom options are used to do something else with whatever else. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result in this case would be `Testing: 1 2 3 !!!`
+## contribute
 
-```js
-grunt.initConfig({
-  pug_beautify: {
-    options: {
-      separator: ': ',
-      punctuation: ' !!!',
-    },
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
-  },
-});
-```
+All code in any code-base should look like a single person typed it, no matter how many people contributed.
 
-## Contributing
-In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
+## license
 
-## Release History
-_(Nothing yet)_
+MIT © [Pierre Cholhot](http://pierre.cx/)
