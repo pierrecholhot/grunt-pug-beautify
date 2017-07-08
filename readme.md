@@ -6,13 +6,13 @@ A grunt wrapper for <strike>Jade-Beautify</strike> (now Pug-Beautify).
 
 ## install
 
-```
+```sh
 $ npm install --save-dev grunt-pug-beautify
 ```
 
 ## usage
 
-```
+```js
 module.exports = function(grunt) {
   grunt.initConfig({
     pug_beautify: {
