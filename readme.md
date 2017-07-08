@@ -15,7 +15,7 @@ $ npm install --save-dev grunt-pug-beautify
 ```
 module.exports = function(grunt) {
   grunt.initConfig({
-    pugbeautify: {
+    pug_beautify: {
       all: {
         expand: true,
         cwd: 'fixtures/',
@@ -25,7 +25,7 @@ module.exports = function(grunt) {
       }
     }
   });
-  grunt.loadTasks('grunt-pug-beautify');
+  grunt.loadNpmTasks('grunt-pug-beautify');
   grunt.registerTask('default', ['pugbeautify']);
 };
 ```
